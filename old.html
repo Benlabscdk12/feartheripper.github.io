@@ -1,71 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
     <style>
        body{
        background-color: rgb(0,0,0);
-       width: 99%;
-       margin: 0 auto;
        }
-       body > *  {
-    margin: auto;
-    display: block;
-    overflow: auto;
-  }
- #output> *  {
-    margin: auto;
-  }
        .font{
           visibility: hidden;
-          margin: auto;
-       }
-       .meep{
-        margin: auto;
        }
        #output{
-          margin: auto;
+          margins: auto;
           width: 80%;
-          text-align: center;
+        text-align: center;
        }
     </style>
 </head>
 <body>
 <div id="output" class="container" style="width: 100%; height: 20%;">
 </div>
-<div id="player"></div>
-
-<script src="http://www.youtube.com/player_api"></script>
-
-<script>
-
-    // create youtube player
-    var player;
-    function onYouTubePlayerAPIReady() {
-        player = new YT.Player('player', {
-          width: '500',
-          height: '390',
-          videoId: 'M4trUEpmBj8',
-          events: {
-            onReady: onPlayerReady,
-            onStateChange: onPlayerStateChange
-          }
-        });
-    }
-
-    // autoplay video
-    function onPlayerReady(event) {
-        event.target.playVideo();
-    }
-
-    // when video ends
-    function onPlayerStateChange(event) {        
-        if(event.data === 0) {          
-            window.location.href = "http://google.com";
-        }
-    }
-
-</script>
 <br>
 <div id="fontHolder" class="container" style="width: 0%; height: 0%;">
 <svg class="font" id="A" height="5%" width="3%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -276,7 +228,6 @@ async function printName(){
         var clone = elem.cloneNode(true);
         clone.id = name.charAt(i) + String(i);
         clone.classList.remove("font");
-        clone.classList.add("meep")
         document.getElementById("output").append(clone);
     }
     await sleep(3000);
