@@ -271,7 +271,7 @@ function sleep(ms) {
 async function printName(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const greeting = "HELLO_DETECTIVE_";
+    const greeting = "_____HELLO_DETECTIVE_";
     var name = greeting.concat(urlParams.get('name'));
     for (var i = 0; i < name.length; i++){
         var elem = document.querySelector('#' + name.charAt(i));
